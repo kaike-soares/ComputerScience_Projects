@@ -1,6 +1,7 @@
 # app_weather_map
 
 App de clima.
+API: https://openweathermap.org
 
 ## Getting Started
 
