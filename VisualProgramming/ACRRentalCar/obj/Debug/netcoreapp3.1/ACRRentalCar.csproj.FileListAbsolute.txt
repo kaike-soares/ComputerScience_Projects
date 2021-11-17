@@ -1,0 +1,16 @@
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.exe
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.deps.json
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.runtimeconfig.json
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.runtimeconfig.dev.json
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.dll
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\bin\Debug\netcoreapp3.1\ACRRentalCar.pdb
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.csproj.AssemblyReference.cache
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.frmPrincipal.resources
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.csproj.GenerateResource.cache
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.AssemblyInfoInputs.cache
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.AssemblyInfo.cs
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.csproj.CoreCompileInputs.cache
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.dll
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.pdb
+E:\GitHub\ComputerScience_Projects\VisualProgramming\ACRRentalCar\obj\Debug\netcoreapp3.1\ACRRentalCar.genruntimeconfig.cache
