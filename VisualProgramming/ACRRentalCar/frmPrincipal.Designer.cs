@@ -1,7 +1,7 @@
 ﻿
 namespace ACRRentalCar
 {
-    partial class frmPrincipal
+    partial class frmCadastroCliente
     {
         /// <summary>
         ///  Required designer variable.
@@ -63,13 +63,13 @@ namespace ACRRentalCar
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // veículoToolStripMenuItem
             // 
             this.veículoToolStripMenuItem.Name = "veículoToolStripMenuItem";
-            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.veículoToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.veículoToolStripMenuItem.Text = "Veículo";
             // 
             // movimentaçãoToolStripMenuItem
@@ -84,20 +84,20 @@ namespace ACRRentalCar
             // locaçãoToolStripMenuItem
             // 
             this.locaçãoToolStripMenuItem.Name = "locaçãoToolStripMenuItem";
-            this.locaçãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.locaçãoToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.locaçãoToolStripMenuItem.Text = "Locação";
             // 
             // devoluçãoToolStripMenuItem
             // 
             this.devoluçãoToolStripMenuItem.Name = "devoluçãoToolStripMenuItem";
-            this.devoluçãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.devoluçãoToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.devoluçãoToolStripMenuItem.Text = "Devolução";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 480);
+            this.ClientSize = new System.Drawing.Size(768, 363);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

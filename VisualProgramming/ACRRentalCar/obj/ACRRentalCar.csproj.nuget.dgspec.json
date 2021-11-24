@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\ComputerScience_Projects\\VisualProgramming\\ACRRentalCar\\ACRRentalCar.csproj": {}
+    "E:\\GitHub\\ComputerScience\\VisualProgramming\\Project\\ACRRentalCar\\ACRRentalCar.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\ComputerScience_Projects\\VisualProgramming\\ACRRentalCar\\ACRRentalCar.csproj": {
+    "E:\\GitHub\\ComputerScience\\VisualProgramming\\Project\\ACRRentalCar\\ACRRentalCar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\ComputerScience_Projects\\VisualProgramming\\ACRRentalCar\\ACRRentalCar.csproj",
+        "projectUniqueName": "E:\\GitHub\\ComputerScience\\VisualProgramming\\Project\\ACRRentalCar\\ACRRentalCar.csproj",
         "projectName": "ACRRentalCar",
-        "projectPath": "E:\\GitHub\\ComputerScience_Projects\\VisualProgramming\\ACRRentalCar\\ACRRentalCar.csproj",
+        "projectPath": "E:\\GitHub\\ComputerScience\\VisualProgramming\\Project\\ACRRentalCar\\ACRRentalCar.csproj",
         "packagesPath": "C:\\Users\\Kaike Soares\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\ComputerScience_Projects\\VisualProgramming\\ACRRentalCar\\obj\\",
+        "outputPath": "E:\\GitHub\\ComputerScience\\VisualProgramming\\Project\\ACRRentalCar\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
