@@ -1,5 +1,5 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'dart:convert';
 
@@ -11,8 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   List _todoList = [];
+  final _todoController = TextEditingController();
   late Map<String, dynamic> _ultimoRemovido;
   late int _indiceUltimoRemovido;
 
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
     try {
       final arquivo = await _abreArquivo();
       return arquivo.readAsString();
-    } catch(e) {
+    } catch (e) {
       return null;
     }
   }
@@ -44,6 +44,28 @@ class _HomeState extends State<Home> {
     String dados = json.encode(_todoList);
     final file = await _abreArquivo();
     return file.writeAsString(dados);
+  }
+
+  void _adicionaTarefa() {
+    setState(() {
+      Map<String, dynamic> novoToDo = {};
+      novoToDo["titulo"] = _todoController.text;
+      novoToDo["realizado"] = false;
+      _todoController.text = "";
+      _todoList.add(novoToDo);
+      _salvarDados();
+    });
+  }
+
+  Future<void> _reordenaLista() async {
+    await Future.delayed(const Duration(seconds: 1));
+    setState(() {
+      _todoList.sort((a, b) {
+        if(a["realizado"] && !b["realizado"]) return 1;
+        if(!a["realizado"] && b["realizado"]) return -1;
+        return 0;
+      });
+    });
   }
 
   Widget widgetToDo(BuildContext context, int index) {
@@ -57,15 +79,14 @@ class _HomeState extends State<Home> {
           ),
         ),
         direction: DismissDirection.endToStart,
-        child:  CheckboxListTile(
+        child: CheckboxListTile(
           title: Text(_todoList[index]["titulo"]),
           value: _todoList[index]["realizado"],
           secondary: CircleAvatar(
             backgroundColor: Theme.of(context).colorScheme.secondary,
             child: Icon(
                 _todoList[index]["realizado"] ? Icons.check : Icons.error,
-                color: Theme.of(context).colorScheme.primary
-            ),
+                color: Theme.of(context).colorScheme.primary),
           ),
           onChanged: (value) {
             setState(() {
@@ -81,15 +102,95 @@ class _HomeState extends State<Home> {
             _todoList.removeAt(index);
             _salvarDados();
           });
-          //mostrar a opção (com snackbar) para desfazer..
-          //paramos aqui
-        }
-    );
+
+          final snack = SnackBar(
+            content: Text("Tarefa \"${_ultimoRemovido["titulo"]}\" removida!"),
+            duration: const Duration(seconds: 4),
+            action: SnackBarAction(
+              label: "Desfazer",
+              onPressed: () {
+                setState(() {
+                  _todoList.insert(_indiceUltimoRemovido, _ultimoRemovido);
+                  _salvarDados();
+                });
+              },
+            ),
+          );
+          //remove, se houver, a snackbar atual
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+
+          //exibe a snackbar do item removido
+          ScaffoldMessenger.of(context).showSnackBar(snack);
+        });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("ToDo List"),
+          centerTitle: true,
+        ),
+        body: Builder(
+            builder: (context) => Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.fromLTRB(17, 1, 7, 1),
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: TextField(
+                            controller: _todoController,
+                            maxLength: 90,
+                            decoration:
+                            const InputDecoration(labelText: "Nova Tarefa"),
+                          )),
+                      SizedBox(
+                        height: 45,
+                        width: 45,
+                        child: FloatingActionButton(
+                          child: const Icon(Icons.save),
+                          onPressed: () {
+                            if (_todoController.text.isEmpty) {
+                              final snackAlerta = SnackBar(
+                                content: const Text("Não pode ser vazio!"),
+                                duration: const Duration(seconds: 4),
+                                action: SnackBarAction(
+                                  label: "Ok",
+                                  onPressed: () {
+                                    ScaffoldMessenger.of(context)
+                                        .removeCurrentSnackBar();
+                                  },
+                                ),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .removeCurrentSnackBar();
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackAlerta);
+                            } else {
+                              _adicionaTarefa();
+                            }
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                const Padding(padding: EdgeInsets.only(top: 10)),
+                Expanded(
+                    child: RefreshIndicator(
+                      onRefresh: _reordenaLista,
+                      child: ListView.builder(
+                        itemBuilder: widgetToDo,
+                        itemCount: _todoList.length,
+                        padding: const EdgeInsets.only(top: 10),
+                      ),
+                    )
+                )
+              ],
+            )
+        )
+    );
   }
 }
 
